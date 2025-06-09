@@ -1,0 +1,349 @@
+/* Общие настройки */
+html, body {
+  height: 100%;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Заголовок */
+header {
+  background: linear-gradient(135deg, #000000, #600000, #aa1d1d);
+  color: white;
+  padding: 20px 0;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+
+
+
+/* Навигация */
+nav {
+  display: flex;
+  justify-content: center;
+  background-color: #023e8a;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav a {
+  color: white;
+  padding: 14px 25px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s, color 0.3s;
+}
+
+nav a:hover {
+  background-color: #0077b6;
+  color: #fff;
+}
+
+/* Контентные вкладки */
+.tab {
+  display: none;
+  padding: 30px 0;
+  animation: fade 0.4s ease-in-out;
+  background: linear-gradient(135deg, #000000, #600000, #aa1d1d);
+  color: white;
+  min-height: 100vh;
+  width: 100vw;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+
+
+
+
+.tab.active {
+  display: block;
+}
+
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Раздел "Наши авто" */
+.cars {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  justify-content: center;
+}
+
+.car {
+  background-color: #000;         /* черный фон */
+  border: 2px solid white;        /* белая рамка */
+  color: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s;
+  width: 300px;
+}
+
+.car:hover {
+  transform: translateY(-5px);
+}
+
+.car img {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+}
+
+.car h3 {
+  padding: 15px;
+  text-align: center;
+  font-size: 18px;
+  color: white;
+}
+
+/* О нас и Контакты */
+#about, #contacts {
+}
+
+#about h2, #contacts h2 {
+  margin-bottom: 15px;
+  color: white;
+}
+
+p {
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+.car-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 20px 0;
+  flex-wrap: wrap;
+}
+.car-tab-btn {
+  background: #e0e0e0;
+  border: none;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 6px;
+  transition: background 0.3s;
+}
+.car-tab-btn.active,
+.car-tab-btn:hover {
+  background: grey;
+  color: white;
+}
+.car-category {
+  display: none;
+}
+.car-category.active {
+  display: block;
+}
+.about-features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.feature-card {
+  background-color: #000; /* ЧЁРНЫЙ фон */
+  border: 2px solid white; /* белая обводка */
+  border-radius: 20px;
+  padding: 30px 20px;
+  text-align: center;
+  color: white;
+  transition: transform 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.feature-card:hover {
+  transform: translateY(-5px);
+}
+
+.feature-icon {
+  font-size: 36px;
+  margin-bottom: 15px;
+  color: white;
+}
+
+.feature-card h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 12px;
+  color: white;
+}
+
+.feature-card p {
+  color: white;
+  font-size: 16px;
+  line-height: 1.4;
+}
+
+/* Заголовки вкладок (О нас, Наши авто и т.д.) */
+.tab h2 {
+  color: #fff;
+}
+.contact-box {
+  max-width: 900px;
+  margin: 0 auto;  /* центрируем */
+  background: rgba(255, 255, 255, 0.95);
+  padding: 25px;
+  border-radius: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  color: #000;
+}
+
+
+.contact-left {
+  flex: 1 1 300px;
+}
+
+.contact-label {
+  color: #888;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.contact-time {
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.contact-info p {
+  font-size: 16px;
+  margin-bottom: 8px;
+}
+
+.icon {
+  margin-right: 8px;
+  color: #aa1d1d;
+  font-weight: bold;
+}
+
+.contact-socials {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+}
+
+.social-btn {
+  background: #aa1d1d;
+  color: white;
+  font-size: 20px;
+  width: 42px;
+  height: 42px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  text-decoration: none;
+  transition: background 0.3s;
+}
+
+.social-btn:hover {
+  background: #cc2a2a;
+}
+.car {
+  background-color: #000 !important;
+  border: 2px solid white !important;
+  color: white !important;
+}
+
+.car h3 {
+  color: white !important;
+}
+.help-box {
+  background: white;
+  border-radius: 30px;
+  padding: 40px 30px;
+  margin-top: 60px;
+  color: black;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  text-align: center;
+}
+
+.help-header h2 {
+  font-size: 28px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.help-header p {
+  color: #333;             /* более тёмный */
+  font-size: 16px;
+  font-weight: 600;        /* делает жирнее */
+  margin-bottom: 30px;
+}
+
+
+.form-box {
+  background: #111;
+  padding: 30px;
+  border-radius: 20px;
+  color: white;
+  margin-top: 20px;
+}
+
+.form-box h3 {
+  margin-bottom: 20px;
+  font-size: 22px;
+}
+
+.form-box form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+}
+
+.form-box input,
+.form-box select {
+  padding: 12px 15px;
+  border-radius: 10px;
+  border: 2px solid white;
+  background: transparent;
+  color: white;
+  width: 200px;
+  font-size: 14px;
+}
+
+.form-box select option {
+  color: black;
+}
+
+.form-box button {
+  background: #aa1d1d;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.form-box button:hover {
+  background: #cc2a2a;
+}
+
+
+

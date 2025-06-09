@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <title>Аренда авто</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      background-color: #f5f5f5;
+    }
+    header {
+      background-color: #333;
+      color: white;
+      padding: 15px;
+      text-align: center;
+    }
+    nav {
+      display: flex;
+      justify-content: center;
+      background-color: black;
+    }
+    nav a {
+      color: white;
+      padding: 14px 20px;
+      display: inline-block;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    nav a:hover {
+      background-color: #333;
+    }
+    .tab {
+      display: none;
+      padding: 20px;
+    }
+    .active {
+      display: block;
+    }
+    .cars {
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .car {
+      background: white;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      width: 300px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    .car img {
+      width: 100%;
+      border-radius: 8px 8px 0 0;
+    }
+    .car h3 {
+      margin: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Аренда Авто в Астане</h1>
+</header>
+
+<nav>
+  <a href="#" onclick="showTab('cars')">Наши авто</a>
+  <a href="#" onclick="showTab('about')">О нас</a>
+  <a href="#" onclick="showTab('contacts')">Контакты</a>
+</nav>
+
+<div id="cars" class="tab active">
+  <h2>Наш автопарк</h2>
+  
+  <div class="car-tabs">
+  <button type="button" onclick="showCategory(event, 'economy')" class="car-tab-btn active">Эконом</button>
+  <button type="button" onclick="showCategory(event, 'comfort')" class="car-tab-btn">Комфорт</button>
+  <button type="button" onclick="showCategory(event, 'business')" class="car-tab-btn">Бизнес</button>
+  <button type="button" onclick="showCategory(event, 'premium')" class="car-tab-btn">Премиум</button>
+</div>
+
+
+  <div id="economy" class="car-category active">
+    <div class="cars">
+      <div class="car">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/0/00/Chevrolet_Cobalt_2013_in_Russia.JPG" alt="Cobalt">
+        <h3>Chevrolet Cobalt<br><small>от 14 000 ₸</small></h3>
+      </div>
+      <div class="car">
+        <img src="https://kolesa-photos.kcdn.online/kolesa-read/2efcffec2dd24c4f2eada36cf758675bb6811147-1193x671.jpg" alt="Accent">
+        <h3>Hyundai Accent<br><small>от 16 000 ₸</small></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="comfort" class="car-category">
+    <div class="cars">
+      <div class="car">
+        <img src="https://www.ixbt.com/img/n1/news/2023/1/1/2024-hyundai-avante-south-korea%20(2)_large.jpg" alt="Elantra">
+        <h3>Hyundai Elantra<br><small>от 25 000 ₸</small></h3>
+      </div>
+      <div class="car">
+        <img src="https://autoreview.ru/images/Article/1765/Article_176532_860_575.jpg" alt="i30">
+        <h3>Hyundai i30<br><small>от 25 000 ₸</small></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="business" class="car-category">
+    <div class="cars">
+      <div class="car">
+        <img src="https://avatars.mds.yandex.net/get-verba/216201/2a0000018bb30bb85fd1b9a774bae8f9d7d3/cattouchretcr" alt="Kia K5">
+        <h3>Kia K5<br><small>от 27 000 ₸</small></h3>
+      </div>
+      <div class="car">
+        <img src="https://kolesa-uploads.ru/r/880x/a581d8e1-5b1a-4bf1-90dd-218736e663aa/hyundai-sonata-rest-front1.jpg" alt="Sonata">
+        <h3>Hyundai Sonata<br><small>от 27 000 ₸</small></h3>
+      </div>
+    </div>
+  </div>
+
+  <div id="premium" class="car-category">
+    <div class="cars">
+      <div class="car">
+        <img src="https://hongqi-auto.kz/uploads/images/model-colors/o6AXTrreQQ.webp" alt="Hongqi">
+        <h3>Hongqi H5<br><small>от 50 000 ₸</small></h3>
+      </div>
+      <div class="car">
+        <img src="https://static.tildacdn.pro/tild3633-3833-4664-b861-363664366436/lixiang-l9-4-715x459.png" alt="Li L9">
+        <h3>Li L9<br><small>от 100 000 ₸</small></h3>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<div id="about" class="tab">
+  <h2>О нас</h2>
+  <p>Наша компания предоставляет услуги аренды автомобилей в Астане с 2015 года. Мы предлагаем только проверенные и комфортные автомобили по доступным ценам. Ваш комфорт — наша цель!</p>
+
+  <div class="about-features">
+    <div class="feature-card">
+      <div class="feature-icon">💰</div>
+      <h3>Цена</h3>
+      <p>Самые выгодные цены по городу</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">✅</div>
+      <h3>Качество</h3>
+      <p>Новые, чистые и комфортные авто</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🧼</div>
+      <h3>Сервис</h3>
+      <p>Служба поддержки 24/7, доставка авто по городу</p>
+    </div>
+    <div class="feature-card">
+      <div class="feature-icon">🎁</div>
+      <h3>Скидки</h3>
+      <p>Скидка при аренде от 6 дней и более</p>
+    </div>
+  </div>
+</div>
+
+
+<div id="contacts" class="tab">
+  <h2>Контакты</h2>
+
+  <div class="contact-box">
+    <div class="contact-left">
+      <p class="contact-label">Рабочие часы</p>
+      <p class="contact-time">10:00 – 21:00</p>
+
+      <div class="contact-info">
+        <p><span class="icon">📍</span> г. Астана, улица Кумисбекова 2</p>
+        <p><span class="icon">📞</span> +7 708 274 2079</p>
+      </div>
+    </div>
+
+    <div class="contact-socials">
+      <a href="#" class="social-btn">📸</a>
+      <a href="#" class="social-btn">✈️</a>
+      <a href="#" class="social-btn">💬</a>
+    </div>
+  </div>
+  <div class="help-box">
+  <div class="help-header">
+    <h2>Нужна помощь с выбором автомобиля?</h2>
+    <p>Оставьте ваши контакты и мы с вами свяжемся</p>
+  </div>
+
+  <div class="form-box">
+    <h3>Оставьте заявку</h3>
+    <form>
+      <input type="text" placeholder="Ваше Имя" required>
+      <input type="tel" placeholder="+7 (___) ___ ____" required>
+      <select required>
+        <option value="">Выберите тему</option>
+        <option>Аренда</option>
+        <option>Проконсультироваться</option>
+      </select>
+      <button type="submit">Отправить Нам</button>
+    </form>
+  </div>
+</div>
+</div>
+
+
+<script>
+  function showTab(tabId) {
+    const tabs = document.querySelectorAll('.tab');
+    tabs.forEach(tab => tab.classList.remove('active'));
+    document.getElementById(tabId).classList.add('active');
+  }
+
+  function showCategory(event, id) {
+    const categories = document.querySelectorAll('.car-category');
+    const buttons = document.querySelectorAll('.car-tab-btn');
+
+    categories.forEach(cat => cat.classList.remove('active'));
+    buttons.forEach(btn => btn.classList.remove('active'));
+
+    document.getElementById(id).classList.add('active');
+    event.currentTarget.classList.add('active');
+  }
+</script>
+
+
+</body>
+</html>
